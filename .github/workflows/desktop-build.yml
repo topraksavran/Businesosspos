@@ -1,0 +1,36 @@
+name: BusinessOS POS desktop builds
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            args: '--bundles dmg'
+          - os: windows-latest
+            args: '--bundles nsis'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Rust setup
+        uses: dtolnay/rust-toolchain@stable
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install Tauri CLI
+        run: npm install
+      - name: Build installer
+        run: npm run build -- ${{ matrix.args }}
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: BusinessOS-POS-${{ matrix.os }}
+          path: src-tauri/target/release/bundle/**
