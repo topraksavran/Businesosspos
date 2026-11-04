@@ -27,8 +27,8 @@
   "active": true,
   "targets": "all",
   "icon": [
-    "../../northstar-agency-transparent.png"
-  ],
+  "icons/icon.ico"
+],
   "createUpdaterArtifacts": false
 }
 }
