@@ -24,8 +24,11 @@
     }
   },
   "bundle": {
-    "active": true,
-    "targets": "all",
-    "createUpdaterArtifacts": false
-  }
+  "active": true,
+  "targets": "all",
+  "icon": [
+    "../../northstar-agency-transparent.png"
+  ],
+  "createUpdaterArtifacts": false
+}
 }
