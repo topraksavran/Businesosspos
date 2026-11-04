@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: BusinessOS-POS-${{ matrix.os }}
-          path: src-tauri/target/release/bundle/**
+          path: desktop/src-tauri/target/release/bundle/**
