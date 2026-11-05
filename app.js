@@ -102,6 +102,12 @@ aside{background:var(--sidebar-bg)}
 [data-theme="plum"]{--ink:#f7eff8;--muted:#c2adca;--line:#4a3454;--bg:#1a1220;--card:#291b31;--accent:#e2b8ee;--danger:#f28b9b;--good:#72d0a3;--sidebar-bg:linear-gradient(180deg,#160d1d,#32203a)}
 [data-theme="slate"]{--ink:#edf4fa;--muted:#a4b6c6;--line:#2c465b;--bg:#101b25;--card:#172a3a;--accent:#a8d4ee;--danger:#f1848c;--good:#68c6a0;--sidebar-bg:linear-gradient(180deg,#0b1824,#18344a)}
 [data-theme="graphite"] input,[data-theme="forest"] input,[data-theme="plum"] input,[data-theme="slate"] input,[data-theme="graphite"] select,[data-theme="forest"] select,[data-theme="plum"] select,[data-theme="slate"] select{background:var(--bg);color:var(--ink);border-color:var(--line)}
+[data-theme="dark"] button:not(.secondary):not(.danger),[data-theme="dark"] .file-button{background:#315477;color:#fff}
+[data-theme="graphite"] button:not(.secondary):not(.danger),[data-theme="graphite"] .file-button{background:#596979;color:#fff}
+[data-theme="forest"] button:not(.secondary):not(.danger),[data-theme="forest"] .file-button{background:#34775e;color:#fff}
+[data-theme="plum"] button:not(.secondary):not(.danger),[data-theme="plum"] .file-button{background:#70447d;color:#fff}
+[data-theme="slate"] button:not(.secondary):not(.danger),[data-theme="slate"] .file-button{background:#356582;color:#fff}
+[data-theme="dark"] .secondary,[data-theme="graphite"] .secondary,[data-theme="forest"] .secondary,[data-theme="plum"] .secondary,[data-theme="slate"] .secondary{background:var(--card);color:var(--ink);border-color:var(--line)}
 `;document.head.appendChild(posThemeStyle);
 const themeOptionsRender=render;render=()=>{themeOptionsRender();const select=document.querySelector('#posTheme');if(select){if(!select.querySelector('option[value="graphite"]'))select.innerHTML='<option value="light">Açık tema</option><option value="dark">Karanlık tema</option><option value="graphite">Grafit</option><option value="forest">Orman</option><option value="plum">Erik</option><option value="slate">Slate mavi</option>';select.value=localStorage.getItem('businessos-pos-theme')||'light'}};
 
