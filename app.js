@@ -89,6 +89,12 @@ const dragOrderRender=render;render=()=>{dragOrderRender();if(view==='products')
 const posThemeStyle=document.createElement('style');posThemeStyle.textContent=`
 :root{--sidebar-bg:linear-gradient(180deg,#101c31,#172b49);--sidebar-text:#bdc9d7}
 aside{background:var(--sidebar-bg)}
+[data-theme="light"] body{background:radial-gradient(circle at 90% -10%,#e8eef8,transparent 34%),var(--bg)}
+[data-theme="dark"] body{background:radial-gradient(circle at 90% -10%,#243b5b,transparent 35%),var(--bg)}
+[data-theme="graphite"] body{background:radial-gradient(circle at 90% -10%,#49515d,transparent 34%),var(--bg)}
+[data-theme="forest"] body{background:radial-gradient(circle at 90% -10%,#285b47,transparent 34%),var(--bg)}
+[data-theme="plum"] body{background:radial-gradient(circle at 90% -10%,#633b70,transparent 34%),var(--bg)}
+[data-theme="slate"] body{background:radial-gradient(circle at 90% -10%,#315b78,transparent 34%),var(--bg)}
 [data-theme="light"]{--sidebar-bg:linear-gradient(180deg,#101c31,#172b49)}
 [data-theme="dark"]{--sidebar-bg:linear-gradient(180deg,#090d16,#121b2b)}
 [data-theme="graphite"]{--ink:#f3f5f7;--muted:#aeb7c2;--line:#35404c;--bg:#171a1f;--card:#22272e;--accent:#d7dde5;--danger:#ff858d;--good:#62c39a;--sidebar-bg:linear-gradient(180deg,#17191d,#292e35)}
